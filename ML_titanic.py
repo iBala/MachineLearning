@@ -15,8 +15,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 
-titanic_df=pd.read_csv("~/Projects/Titanic/train.csv")
-test_df=pd.read_csv("~/Projects/Titanic/test.csv")
+titanic_df=pd.read_csv("train.csv")
+test_df=pd.read_csv("test.csv")
 
 titanic_df = titanic_df.drop(['PassengerId','Name','Ticket','Cabin','Fare','Embarked'], axis=1)
 test_df    = test_df.drop(['Name','Ticket','Cabin','Fare','Embarked'], axis=1)
@@ -87,7 +87,6 @@ random_forest = RandomForestClassifier(n_estimators=100)
 random_forest.fit(X_train, Y_train)
 Y_pred = random_forest.predict(X_test)
 print "Random Forest Score is "+str(random_forest.score(X_train, Y_train))
-print Y_pred
 
 submission = pd.DataFrame({"PassengerId": test_df['PassengerId'],"Survived": Y_pred})
 submission.to_csv("~/Projects/Titanic/submission.csv",index=False)
