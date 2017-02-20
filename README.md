@@ -1,3 +1,3 @@
 # MachineLearning
 
-Trying out my hands at Machine Learning
+Trying out my hand at Machine Learning
