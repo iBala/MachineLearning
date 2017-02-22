@@ -93,5 +93,5 @@ Y_pred = model_lasso.predict(X_test)
 Y_pred = np.expm1(model_lasso.predict(X_test))
 print Y_pred
 
-submission = pd.DataFrame({"Id": test['Id'],"Price": Y_pred})
+submission = pd.DataFrame({"Id": test['Id'],"SalePrice": Y_pred})
 submission.to_csv("submission.csv",index=False)
